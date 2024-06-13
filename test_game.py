@@ -12,8 +12,9 @@ class TestGame(TestCase):
             self.game.guess(None)
 
     def test_exception_when_input_length_is_unmatched(self):
+        guessNumber = "12"
         try:
-            self.game.guess("12")
+            self.game.guess("%s" % guessNumber)
             self.fail()
         except TypeError:
             pass
